@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu dengan jQuery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".menu-item").click(function(){
+        // Menghapus kelas "active" dari semua elemen dengan kelas "menu-item"
+        $(".menu-item").removeClass("active");
+
+        // Menambahkan kelas "active" ke elemen yang diklik
+        $(this).addClass("active");
+    });
+});
+</script>
+<style>
+.menu {
+    list-style-type: none;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+}
+
+.menu-item {
+    display: inline-block;
+    padding: 20px;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.menu-item.active {
+    background-color: powderblue;
+}
+</style>
+</head>
+<body>
+<ul class="menu">
+    <li class="menu-item active">Menu 1</li>
+    <li class="menu-item">Menu 2</li>
+    <li class="menu-item">Menu 3</li>
+    <li class="menu-item">Menu 4</li>
+    <li class="menu-item">Menu 5</li>
+    <li class="menu-item">Menu 6</li>
+    <li class="menu-item">Menu 7</li>
+    <li class="menu-item">Menu 8</li>
+    <li class="menu-item">Menu 9</li>
+    <li class="menu-item">Menu 10</li>
+</ul>
+</body>
+</html>

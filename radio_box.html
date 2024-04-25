@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mengakses objek radio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="radio"] {
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        hr {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Klik pada musik yang paling Anda sukai</h2>
+    <form name="formtes" method="get">
+        <input type="radio" name="radiomusik" value="jazz" onclick="info()"> Jazz<br>
+        <input type="radio" name="radiomusik" value="keoncong" onclick="info()"> Keroncong<br>
+        <input type="radio" name="radiomusik" value="dangdut" onclick="info()"> Dangdut<br>
+        <input type="radio" name="radiomusik" value="lainya" onclick="info()"> Lainnya<br>
+        <hr>
+        <label for="fieldmusik">Info:</label>
+        <input type="text" name="fieldmusik" id="fieldmusik" size="40" readonly>
+    </form>
+    
+    <script>
+        function info() {
+            var radioButtons = document.getElementsByName('radiomusik');
+            var selectedValue = "";
+            
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked) {
+                    selectedValue = radioButtons[i].value;
+                    break;
+                }
+            }
+            
+            document.getElementById('fieldmusik').value = selectedValue;
+        }
+    </script>
+</body>
+</html>

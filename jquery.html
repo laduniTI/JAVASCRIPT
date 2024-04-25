@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contoh Animasi Kompleks dengan jQuery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#start_animation").click(function(){
+        $("#box").animate({
+            left: '300px',
+            opacity: '0.2',
+            height: '200px',
+            width: '200px'
+        }, 2000, function(){
+            $("#box").animate({
+                left: '0',
+                opacity: '1',
+                height: '100px',
+                width: '100px'
+            }, 2000);
+        });
+    });
+});
+</script>
+<style>
+#box {
+    position: relative;
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+</style>
+</head>
+<body>
+
+<button id="start_animation">Klik untuk Mulai Animasi</button>
+<div id="box"></div>
+</body>
+</html>
